@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <ui:composition template="/index.xhtml">
+        <ui:define name="Meio">
+            <center>
+                <h:form>   
+                    <p:row>  
+                        <p:column colspan="7">Cadastro de novo usuário</p:column>  
+                    </p:row>                 
+                    <h:panelGrid columns="2" style="text-align: left" border="0">  
+
+                        <h:outputLabel id="lblNome" value="Nome: " />
+                        <p:inputText id="txtNome" autocomplete="true" title="Informe o Nome Completo" value="#{pessoa.nome}" />
+
+                        <h:outputLabel id="lblEmail" value="E-mail: "/>
+                        <p:inputText id="txtEmail" autocomplete="true" title="Informe o E-mail" value="#{pessoa.email}"/>
+
+
+                        <h:outputLabel id="lblSexo" value="Sexo: "/>
+                        <p:selectOneRadio id="Sexo">  
+                            <f:selectItem itemLabel="Masculino" itemValue="TRUE" />  
+                            <f:selectItem itemLabel="Feminino" itemValue="FALSE" />  
+                        </p:selectOneRadio> 
+
+                        <h:outputLabel id="lblRG" value="RG: "/>
+                        <p:inputMask mask="99.999.999-9" title="Informe o RG" value="#{pessoa.rg}"/>  
+
+                        <h:outputLabel id="lblLogin" value="Login: "/>
+                        <p:inputText id="txtLogin" autocomplete="true" title="Informe o Login" value="#{pessoa.login}"/>
+
+                        <h:outputLabel id="lblSenha" value="Senha: "/>
+                        <p:inputText id="txtSenha" autocomplete="false" title="Informe a Senha" type="password" value="#{pessoa.senha}"/>
+
+                        <h:outputLabel id="lblCsenha" value="Confirme a Senha: "/>
+                        <p:inputText id="txtCsenha" autocomplete="false" title="Confirme a Senha" type="password" value="#{pessoa.reSenha}"/>
+
+                        <p:commandButton id="bSalvar" value="Salvar" title="Clique aqui para concluir o cadastro" action="#{pessoa.salvar}"/>
+                        <p:commandButton id="bCancelar" value="Cancelar" title="Clique aqui para cancelar o cadastro"/>
+                    </h:panelGrid>
+
+                </h:form>
+            </center>
+        </ui:define>
+    </ui:composition> 
+</html>
+
