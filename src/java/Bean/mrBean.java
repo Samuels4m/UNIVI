@@ -11,7 +11,7 @@ import javax.ejb.Stateless;
  * @author samuel
  */
 @Stateless
-public class adjsfgasjdfgçasd {
+public class mrBean {
 
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
